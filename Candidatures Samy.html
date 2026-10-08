@@ -1,0 +1,323 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Candidatures Samy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a parody administrative form. Header with a red "célibataire" stamp, then boxed frames on the left and a live copy of the file on the right (stacked on phones). */
+:root {
+  --paper: #f5f6fb;
+  --sheet: #ffffff;
+  --ink: #101a4a;
+  --muted: #5a6290;
+  --field: #e6e9f6;
+  --rule: #2a3aa8;
+  --stamp: #cf2a1f;
+  --stamp-bg: #fde9e6;
+  --focus: #2a3aa8;
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0d1126; --sheet: #151b3a; --ink: #e2e7ff; --muted: #99a3d6;
+    --field: #1f2750; --rule: #8c9dff; --stamp: #ff6f61; --stamp-bg: #3a1c27; --focus: #8c9dff;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0d1126; --sheet: #151b3a; --ink: #e2e7ff; --muted: #99a3d6;
+  --field: #1f2750; --rule: #8c9dff; --stamp: #ff6f61; --stamp-bg: #3a1c27; --focus: #8c9dff;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 16px; line-height: 1.5;
+  padding-inline: 16px; padding-block: 28px 56px;
+}
+.wrap { max-width: 1100px; margin-inline: auto; display: grid; gap: 28px; }
+
+header { display: flex; gap: 20px 32px; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; border-bottom: 2px solid var(--rule); padding-bottom: 20px; }
+.head-text { min-width: 0; flex: 1 1 360px; }
+.ref { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.2rem, 7vw, 4rem); line-height: .98; letter-spacing: -.02em; margin: 0 0 12px; text-wrap: balance; }
+.lead { margin: 0; max-width: 52ch; color: var(--muted); font-size: 1.05rem; }
+.stamp {
+  font-family: var(--mono); font-weight: 500; font-size: 15px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--stamp); border: 3px solid var(--stamp); border-radius: 6px; padding: 10px 16px; background: var(--stamp-bg);
+  transform: rotate(-6deg); text-align: center; line-height: 1.3; flex: none; margin-top: 6px; box-shadow: inset 0 0 0 2px var(--stamp-bg), inset 0 0 0 3px var(--stamp);
+}
+.stamp small { display: block; font-size: 11px; letter-spacing: .12em; opacity: .85; }
+
+main { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+@media (max-width: 860px) { main { grid-template-columns: minmax(0, 1fr); } }
+
+form { display: grid; gap: 18px; min-width: 0; }
+fieldset { border: 1.5px solid var(--rule); border-radius: 4px; margin: 0; padding: 18px 16px 16px; display: grid; gap: 14px; background: var(--sheet); min-width: 0; }
+legend { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding: 3px 10px; background: var(--rule); color: var(--sheet); border-radius: 2px; }
+.row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+.field { display: grid; gap: 5px; min-width: 0; }
+label, .lab { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.opt { font-weight: 400; text-transform: none; letter-spacing: 0; }
+input[type="text"], input[type="number"], textarea {
+  font: inherit; color: var(--ink); background: var(--field); border: 0; border-bottom: 2px solid var(--rule);
+  border-radius: 2px 2px 0 0; padding: 9px 10px; width: 100%; min-width: 0;
+}
+textarea { resize: vertical; min-height: 84px; }
+input::placeholder, textarea::placeholder { color: var(--muted); opacity: .75; }
+input:focus-visible, textarea:focus-visible, button:focus-visible, input[type="checkbox"]:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.count { font-family: var(--mono); font-size: 12px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: .95rem; text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--ink); }
+.check input { margin-top: 4px; width: 18px; height: 18px; flex: none; accent-color: var(--rule); }
+.err { color: var(--stamp); font-size: .9rem; margin: 0; min-height: 1.3em; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+button {
+  font: inherit; font-weight: 600; cursor: pointer; border-radius: 3px; padding: 12px 20px; border: 2px solid var(--rule);
+  background: var(--rule); color: var(--sheet);
+}
+button.ghost { background: transparent; color: var(--rule); }
+button:hover { filter: brightness(1.1); }
+
+aside { min-width: 0; position: sticky; top: env(safe-area-inset-top, 0px); padding-top: 4px; }
+@media (max-width: 860px) { aside { position: static; } }
+.sheet { background: var(--sheet); border: 1.5px solid var(--rule); border-radius: 4px; padding: 20px 18px; display: grid; gap: 14px; }
+.sheet-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border-bottom: 1px dashed var(--rule); padding-bottom: 10px; }
+.sheet h2 { font-family: var(--display); font-weight: 700; font-size: 1.5rem; line-height: 1.1; margin: 0; }
+dl { margin: 0; display: grid; gap: 12px; }
+dl div { display: grid; gap: 2px; min-width: 0; }
+dt { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+dd { margin: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+dd.empty { color: var(--muted); opacity: .6; }
+.done { display: grid; gap: 14px; border: 2px solid var(--stamp); background: var(--stamp-bg); border-radius: 4px; padding: 16px; }
+.done p { margin: 0; }
+.done strong { font-family: var(--display); font-size: 1.25rem; }
+.fallback { width: 100%; min-height: 120px; font-family: var(--mono); font-size: 13px; }
+footer { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 14px; max-width: 70ch; }
+@media (prefers-reduced-motion: no-preference) {
+  .stamp { animation: tampon .5s cubic-bezier(.2,1.4,.4,1) both; }
+  @keyframes tampon { from { transform: rotate(-6deg) scale(1.7); opacity: 0; } to { transform: rotate(-6deg) scale(1); opacity: 1; } }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="head-text">
+      <p class="ref">Formulaire SAMY-26 · Demande de candidature</p>
+      <h1>Candidature pour Samy</h1>
+      <p class="lead">Samy est célibataire. Si le poste t'intéresse, remplis les cinq cadres ci-dessous, copie ton dossier et envoie-le lui.</p>
+    </div>
+    <div class="stamp" aria-label="Statut : célibataire">Célibataire<small>poste à pourvoir</small></div>
+  </header>
+
+  <main>
+    <form id="f" novalidate>
+      <fieldset>
+        <legend>Cadre 1 · Identité</legend>
+        <div class="row">
+          <div class="field"><label for="prenom">Prénom</label><input id="prenom" type="text" autocomplete="given-name" maxlength="40" placeholder="Camille"></div>
+          <div class="field"><label for="age">Âge</label><input id="age" type="number" inputmode="numeric" min="18" max="99" placeholder="28"></div>
+          <div class="field"><label for="ville">Ville</label><input id="ville" type="text" autocomplete="address-level2" maxlength="50" placeholder="Nantes"></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Cadre 2 · Motivation</legend>
+        <div class="field">
+          <label for="pitch">Pourquoi toi, en une phrase</label>
+          <input id="pitch" type="text" maxlength="140" placeholder="Je fais les meilleures crêpes du département.">
+          <div class="count"><span id="pitchN">0</span> / 140</div>
+        </div>
+        <div class="field">
+          <label for="rdv">Ton premier rendez-vous idéal</label>
+          <textarea id="rdv" maxlength="400" placeholder="Un marché le dimanche matin, puis une partie de pétanque que je perds volontairement."></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Cadre 3 · Pièces justificatives</legend>
+        <div class="field"><label for="talent">Ton talent le plus inutile</label><input id="talent" type="text" maxlength="100" placeholder="Réciter l'alphabet à l'envers en 9 secondes"></div>
+        <div class="field"><label for="plat">Ton plat signature</label><input id="plat" type="text" maxlength="100" placeholder="Gratin dauphinois, version généreuse"></div>
+        <div class="field"><label for="defaut">Ton pire défaut <span class="opt">(facultatif, mais bien vu)</span></label><input id="defaut" type="text" maxlength="100" placeholder="Je suis toujours en avance et ça m'agace"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Cadre 4 · Question bonus</legend>
+        <div class="field">
+          <label for="trio">Pourquoi un plan à 3 avec Samy et Hugo est une bonne idée <span class="opt">(facultatif)</span></label>
+          <textarea id="trio" maxlength="400" placeholder="Argumente. Les trois premiers arguments comptent double."></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Cadre 5 · Pour te joindre</legend>
+        <div class="field"><label for="contact">Pseudo, numéro ou adresse mail</label><input id="contact" type="text" autocomplete="off" maxlength="80" placeholder="@camille ou camille@exemple.fr"></div>
+        <label class="check" for="cert"><input id="cert" type="checkbox"><span>Je certifie avoir 18 ans ou plus et que les informations ci-dessus sont exactes.</span></label>
+        <p class="err" id="err" role="alert"></p>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit" id="go">Constituer mon dossier</button>
+        <button type="button" class="ghost" id="reset">Tout effacer</button>
+      </div>
+    </form>
+
+    <aside aria-label="Aperçu du dossier">
+      <div class="sheet">
+        <div class="sheet-top"><span>Dossier n° <span id="no">en cours</span></span><span id="date"></span></div>
+        <h2 id="titre">Candidature de ...</h2>
+        <dl>
+          <div><dt>Profil</dt><dd id="o-profil"></dd></div>
+          <div><dt>En une phrase</dt><dd id="o-pitch"></dd></div>
+          <div><dt>Premier rendez-vous idéal</dt><dd id="o-rdv"></dd></div>
+          <div><dt>Talent le plus inutile</dt><dd id="o-talent"></dd></div>
+          <div><dt>Plat signature</dt><dd id="o-plat"></dd></div>
+          <div><dt>Pire défaut</dt><dd id="o-defaut"></dd></div>
+          <div><dt>Question bonus : le plan à 3 avec Samy et Hugo</dt><dd id="o-trio"></dd></div>
+          <div><dt>Contact</dt><dd id="o-contact"></dd></div>
+        </dl>
+        <div class="done" id="done" hidden>
+          <strong>Dossier prêt, mais pas encore envoyé.</strong>
+          <p>Copie-le, puis envoie-le à Samy par message, par mail ou en main propre.</p>
+          <div class="actions">
+            <button type="button" id="copy">Copier mon dossier</button>
+            <button type="button" class="ghost" id="edit">Modifier</button>
+          </div>
+          <p id="copied" role="status"></p>
+          <textarea class="fallback" id="fallback" readonly hidden aria-label="Dossier à copier"></textarea>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>Ce formulaire ne garde rien : tout reste dans ton navigateur jusqu'à ce que tu envoies ton dossier toi-même. Réservé aux personnes majeures.</footer>
+</div>
+
+<script>
+(function () {
+  var CONTACT_SAMY = ""; // adresse ou numéro où envoyer les dossiers, vide tant qu'il n'est pas fourni
+  var IDS = ["prenom","age","ville","pitch","rdv","talent","plat","defaut","trio","contact"];
+  var $ = function (id) { return document.getElementById(id); };
+  var KEY = "samy26-brouillon";
+  var refNo = null;
+
+  var mois = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+  var d = new Date();
+  var dateTxt = d.getDate() + " " + mois[d.getMonth()] + " " + d.getFullYear();
+  $("date").textContent = dateTxt;
+
+  function val(id) { return $(id).value.trim(); }
+  function setOut(id, text) {
+    var el = $("o-" + id);
+    if (text) { el.textContent = text; el.className = ""; }
+    else { el.textContent = "à compléter"; el.className = "empty"; }
+  }
+  function profil() {
+    var p = [];
+    if (val("age")) p.push(val("age") + " ans");
+    if (val("ville")) p.push(val("ville"));
+    return p.join(", ");
+  }
+  function render() {
+    $("titre").textContent = val("prenom") ? "Candidature de " + val("prenom") : "Candidature de ...";
+    setOut("profil", profil());
+    ["pitch","rdv","talent","plat","defaut","trio","contact"].forEach(function (k) { setOut(k, val(k)); });
+    $("pitchN").textContent = $("pitch").value.length;
+    $("no").textContent = refNo || "en cours";
+  }
+  function dossierTexte() {
+    var l = [];
+    l.push("DOSSIER DE CANDIDATURE SAMY-26" + (refNo ? " n° " + refNo : ""));
+    l.push("Déposé le " + dateTxt);
+    l.push("");
+    l.push("Candidat(e) : " + val("prenom") + (profil() ? " (" + profil() + ")" : ""));
+    l.push("En une phrase : " + val("pitch"));
+    if (val("rdv")) l.push("Premier rendez-vous idéal : " + val("rdv"));
+    if (val("talent")) l.push("Talent le plus inutile : " + val("talent"));
+    if (val("plat")) l.push("Plat signature : " + val("plat"));
+    if (val("defaut")) l.push("Pire défaut : " + val("defaut"));
+    if (val("trio")) l.push("Pourquoi un plan à 3 avec Samy et Hugo est une bonne idée : " + val("trio"));
+    if (val("contact")) l.push("Contact : " + val("contact"));
+    l.push("");
+    l.push("Je certifie avoir 18 ans ou plus.");
+    return l.join("\n");
+  }
+
+  function save() {
+    try {
+      var o = {};
+      IDS.forEach(function (k) { o[k] = $(k).value; });
+      localStorage.setItem(KEY, JSON.stringify(o));
+    } catch (e) {}
+  }
+  function load() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return;
+      var o = JSON.parse(raw);
+      IDS.forEach(function (k) { if (typeof o[k] === "string") $(k).value = o[k]; });
+    } catch (e) {}
+  }
+
+  function setDone(on) {
+    $("done").hidden = !on;
+    $("go").textContent = on ? "Mettre à jour mon dossier" : "Constituer mon dossier";
+    if (!on) { $("copied").textContent = ""; $("fallback").hidden = true; }
+  }
+
+  $("f").addEventListener("input", function () { render(); save(); setDone(false); $("err").textContent = ""; });
+
+  $("f").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var age = parseInt($("age").value, 10);
+    var problem = null, target = null;
+    if (!val("prenom")) { problem = "Indique ton prénom."; target = "prenom"; }
+    else if (!age || age < 18) { problem = "Les candidatures sont réservées aux personnes de 18 ans ou plus."; target = "age"; }
+    else if (!val("pitch")) { problem = "Résume ta candidature en une phrase."; target = "pitch"; }
+    else if (!val("contact")) { problem = "Ajoute un moyen de te joindre."; target = "contact"; }
+    else if (!$("cert").checked) { problem = "Coche la certification pour continuer."; target = "cert"; }
+    if (problem) { $("err").textContent = problem; $(target).focus(); return; }
+    $("err").textContent = "";
+    if (!refNo) refNo = "26-" + String(Math.floor(1000 + Math.random() * 9000));
+    render();
+    setDone(true);
+    $("done").scrollIntoView({ block: "nearest", behavior: "smooth" });
+  });
+
+  $("copy").addEventListener("click", function () {
+    var txt = dossierTexte();
+    var fb = $("fallback");
+    function showFallback() {
+      fb.value = txt; fb.hidden = false; fb.focus(); fb.select();
+      $("copied").textContent = "Sélectionne le texte ci-dessous et copie-le.";
+    }
+    try {
+      navigator.clipboard.writeText(txt).then(function () {
+        $("copied").textContent = "Dossier copié. Il ne reste plus qu'à l'envoyer.";
+      }, showFallback);
+    } catch (e) { showFallback(); }
+  });
+
+  $("edit").addEventListener("click", function () { setDone(false); $("prenom").focus(); });
+
+  $("reset").addEventListener("click", function () {
+    IDS.forEach(function (k) { $(k).value = ""; });
+    $("cert").checked = false;
+    refNo = null; $("err").textContent = "";
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    setDone(false); render();
+  });
+
+  if (CONTACT_SAMY) {
+    var p = document.createElement("p");
+    p.className = "lead";
+    p.textContent = "Envoie ton dossier à : " + CONTACT_SAMY;
+    document.querySelector(".head-text").appendChild(p);
+  }
+
+  load(); render();
+})();
+</script>
+
+</body></html>
